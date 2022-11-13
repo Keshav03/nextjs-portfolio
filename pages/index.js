@@ -21,7 +21,7 @@ export default function Home() {
       <main>
           <Header></Header>
           <Hero></Hero>
-          <About></About>
+          <About id="about"></About>
           <Skills></Skills>
           <Contact></Contact>
       </main>

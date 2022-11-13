@@ -8,7 +8,6 @@ export default function Header(props) {
     return (
     <div className='absolute bg-[#242526] w-screen sticky top-0 z-20'>
 
-
         <div className="flex justify-evenly h-[10vh] w-4/5 mx-auto p-10  sm:justify-between">
 
             <div>   
@@ -17,7 +16,7 @@ export default function Header(props) {
 
             <div className='flex justify-evenly self-center sm:hidden  md:hidden md:justify-between lg:flex w-1/3 text-white font-bold tracking-wider p-b-10 '>
                 <Link href="/" className='hover:text-[#36bbc4] border-b-4 border-[#36bbc4]' >Home</Link>
-                <Link href="" className='hover:text-[#36bbc4]'>About</Link>
+                <Link href="#about" className='hover:text-[#36bbc4]'>About</Link>
                 <Link href="" className='hover:text-[#36bbc4]'>Projects</Link>
                 <Link href="" className='hover:text-[#36bbc4]'>Contact</Link>
             </div>
