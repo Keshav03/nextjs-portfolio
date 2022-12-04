@@ -8,7 +8,7 @@ export default function About(props) {
     
 
     return (
-        <div className='relative h-auto p-5 bg-[#000]/30 w-screen mx-auto flex justify-center items-center'>
+        <div className='relative h-auto p-5 bg-[#000]/30 w-screen mx-auto flex justify-center items-center' id="about">
 			
             <div className='relative flex flex-col justify-evenly items-center w-1/5 h-80 p-1 m-5'>
                 <h4 className= 'relative -top-2 text-white -rotate-90 tracking-[0.5rem] text-xl uppercase'>About Me</h4>

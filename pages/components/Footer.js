@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 
 
-export default function Contact(props) {
+export default function Footer(props) {
     
 
     return (
-        <div className=' relative h-auto p-5 bg-[#000]/30 w-screen mx-auto flex flex-col justify-center items-center'>
+        <div className=' relative h-auto p-5 bg-[#242526] w-screen mx-auto flex flex-col justify-center items-center'>
 			
 			<div className='flex justify-end self-center p-1'>  
                 <SocialIcon url="https://twitter.com/keshav_bokhoree" bgColor="transparent" fgColor="#ffffff"  className='h-4'/>

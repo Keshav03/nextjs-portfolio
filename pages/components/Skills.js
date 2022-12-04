@@ -20,7 +20,7 @@ export default function Skills(props) {
 
 			<div className='flex justify-around items-center flex-wrap grid-cols-5 w-2/5 h-60 p-1'>  
                 
-                <FaReact className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-blue-500 cursor-pointer' />
+                <FaReact className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white  cursor-pointer' />
                 <FaHtml5 className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
                 <FaCss3 className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
                 <FaPython className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
@@ -32,11 +32,11 @@ export default function Skills(props) {
                 <DiJqueryLogo className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
                 <DiGit className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
                 <DiNpm className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
-                <SiTypescript className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
-
-
-
+                {/* <SiTypescript className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/> */}
             </div>
+
+
+
 	
 		</div>
             

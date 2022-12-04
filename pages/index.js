@@ -5,9 +5,10 @@ import Image from 'next/image'
 
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Contact from './components/Contact'
-import About from './components/AboutUs'
+import Footer from './components/Footer'
 import Skills from './components/Skills'
+import About from './components/AboutUs'
+import Projects from './components/Projects'
 
 
 export default function Home() {
@@ -21,9 +22,10 @@ export default function Home() {
       <main>
           <Header></Header>
           <Hero></Hero>
-          <About id="about"></About>
+          <About></About>
           <Skills></Skills>
-          <Contact></Contact>
+          <Projects></Projects>
+          <Footer></Footer>
       </main>
 
 
