@@ -11,14 +11,14 @@ export default function Header(props) {
         <div className="flex justify-evenly h-[10vh] w-4/5 mx-auto p-10  sm:justify-between">
 
             <div>   
-                <Image src="/logo.png" width="100" height="100" className="w-[60px] relative -top-6"/>
+                <Image src="/logo.png" width="100" height="100" className="w-[7vh] relative -top-6"/>
             </div>
 
-            <div className='flex justify-evenly self-center sm:hidden  md:hidden md:justify-between lg:flex w-1/3 text-white font-bold tracking-wider p-b-10 '>
-                <Link href="/" className='hover:text-[#36bbc4] border-b-4 border-[#36bbc4]' >Home</Link>
-                <Link href="/#about" className='hover:text-[#36bbc4]'>About</Link>
-                <Link href="" className='hover:text-[#36bbc4]'>Projects</Link>
-                <Link href="" className='hover:text-[#36bbc4]'>Contact</Link>
+            <div className='hidden flex justify-evenly self-center text-sm md:hidden md:justify-between lg:flex w-1/3 text-white font-base tracking-wider p-b-10 '>
+                <Link href="/#home" className='hover:text-[#36bbc4] border-b-4 border-[#36bbc4] uppercase' >Home</Link>
+                <Link href="/#about" className='hover:text-[#36bbc4] uppercase'>About</Link>
+                <Link href="/#project" className='hover:text-[#36bbc4] uppercase '>Projects</Link>
+                <Link href="/#contact" className='hover:text-[#36bbc4] uppercase'>Contact</Link>
             </div>
 
 

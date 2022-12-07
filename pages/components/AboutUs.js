@@ -15,7 +15,7 @@ export default function About(props) {
                 <hr className='relative h-[25%] -bottom-6 w-[2px] bg-[#36bbc4]'/>
             </div>
 
-			<div className='flex justify-center items-center w-2/5 h-80 p-1'>  
+			<div className='flex justify-center items-center w-2/5 h-80 p-1'>   
                 <p className='relative -top-6 text-white tracking-wider text-[1em]'>An enthusiastic, self-motivated, reliable, responsible, and hardworking person. A Computer science graduate having excellent Technical IT skills and experience as well as excellent interpersonal skills. Always up to be challenged and motivated to work on new project to improve my IT skills. Seeking for a graduate position in the IT field to utilized and strengthen my skills and expand my knowledge and build on experience.</p>
             </div>
 	

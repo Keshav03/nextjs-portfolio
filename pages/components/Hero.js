@@ -6,7 +6,7 @@ export default function Hero(props) {
     
 
     return (
-        <div className=' relative h-[90vh] bg-[#242526] w-4/5 mx-auto flex flex-col justify-center items-center'>
+        <div className=' relative h-[90vh] bg-[#242526] w-4/5 mx-auto flex flex-col justify-center items-center' id="home">
 
             {/* <div className='absolute top-[17%] l-50 w-[50%] h-[50%] flex flex-col justify-evenly diagonal'>   
                 <div className=' w-[100%] h-[1%] bg-[#D3D3D3]/10 -rotate-12'  > </div>
