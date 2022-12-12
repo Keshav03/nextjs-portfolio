@@ -14,9 +14,7 @@ export default function Modal(props) {
                 <button id='closeBtn' className="relative bg-[#f46d75] text-white w-1/5 top-10 pt-2 pb-2 pl-2 pr-2" 
                 
                     onClick={()=>{
-                        console.log("click")
                         let modal = document.getElementById("modal")
-                        console.log(modal)
                         modal.classList.add("hidden")
                         }}>
                     Close

@@ -1,99 +1,119 @@
 import React from 'react'
+import {useState,useEffect} from 'react'
 import { SocialIcon } from 'react-social-icons';
 import Link from 'next/link';
+import Image from 'next/image'
+
+import { app, database } from '../../firebaseConfig';
+import { collection, getDocs } from "firebase/firestore";
 
 export default function Projects(props) {
-    
+
+    const [projects, setProjects] = useState([
+        {
+                    "id": 1,
+                    "name": "HighSchool Website",
+                    "descriptions" : "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+                    "links":"https://mgssnouvellefrance.com/",
+                    "github":"",
+                    "tags":["Wordpress","HTML","CSS","JavaScript","PHP"],
+                    "image":"/project4.jpg"
+            },{
+                "id": 2,
+                "name": "Portfolio",
+                "descriptions" : "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+                "links":"https://keshavbokhoree.com/",
+                "github":"https://github.com/Keshav03/nextjs-portfolio",
+                "tags":["HTML","CSS","JavaScript","React Js", "Next Js" , "Tailwind CSS", "Firebase"],
+                "image":"/project2.jpg"
+        },{
+            "id": 3,
+            "name": "Video Game Recommendation System",
+            "descriptions" : "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+            "links":"",
+            "github":"https://github.com/Keshav03/QMUL_Final_Year_Project",
+            "tags":["HTML","CSS","JavaScript","React Js", "Django" , "Python", "Recommendation Algorithms","Content Based","Collaborative Filtering"],
+            "image":"/project3.png"
+    }]);
+    const dbInstance = collection(database, 'projects');
+  
+    useEffect(() => {
+        const fetchProjects = async () => {
+            await getDocs(dbInstance)
+                .then((querySnapshot)=>{              
+                    const newData = querySnapshot.docs
+                        .map((doc) => ({...doc.data(), id:doc.id }));
+                    setProjects(newData);                
+                }).catch(err => {
+                    console.log(err)
+                })
+        }
+        fetchProjects();
+        console.log(projects)
+    });
 
     return (
-        <div className='relative h-auto p-4  bg-[#000]/30 w-screen mx-auto flex flex-col justify-center items-center' id="project">
-			
-            <div className='flex flex-col justify-evenly items-center w-1/5 p-1 m-5'>
-                <h4 className= 'text-white tracking-[0.5rem] text-xl uppercase p-2'>Projects</h4>
-                <hr className='h-[2px] w-[30%] bg-[#36bbc4] outline-0'/>
-            </div>
+      <div
+        className="relative h-auto p-4  bg-[#000]/30 w-screen mx-auto flex flex-col justify-center items-center"
+        id="project"
+      >
+        <div className="flex flex-col justify-evenly items-center w-1/5 p-1 m-5">
+          <h4 className="text-white tracking-[0.5rem] text-xl uppercase p-2">
+            Projects
+          </h4>
+          <hr className="h-[2px] w-[30%] bg-[#36bbc4] borderImageoutline-0" />
+        </div>
 
+        <div className=" flex justify-evenly items-evenly w-3/5 h-[750px] p-2 mt-10">
+          {projects.map((project) => {
+            return (
+              <div className="relative h-[80%] w-1/4 bg-[#000]/30 overflow-hidden" key={project.id}>
+                <div className="relative w-[100%] h-[150px]">
+                    <Image 
+                    alt=""
+                    src={project.image}
+                    layout='fill'
+                    />
+                </div>
+                <h2 className="p-3 text-lg text-white font-medium tracking-[0.15rem]">
+                  {project.name}
+                </h2>
+                <p className="text-xs p-3 text-[#fff]/70">
+                  {project.descriptions}
+                </p>
 
-			<div className=' flex justify-evenly items-evenly w-3/5 h-[700px] p-2 mt-10'>  
-                
-                <div className="relative h-[80%] w-1/4 bg-[#000]/30 overflow-hidden" >
-                    <img src="/project4.jpg" className="w-[100%] h-[150px]"></img>
-                    <h2 className="p-3 text-lg text-white font-medium tracking-[0.15rem]">High-School Website</h2>
-                    <p className="text-xs p-3 text-[#fff]/70">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
-
-                    <div className="w-[90%] p-2 flex flex-wrap ">
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Wordpress</p>    
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">HTML</p>    
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">CSS</p>    
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Javascript</p>    
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">PHP</p>    
-                    </div> 
-
-
-
-                    <div className="absolute bottom-0 flex flex-row-reverse w-full ">
-                        <SocialIcon url="https://mgssnouvellefrance.com/" bgColor="transparent" fgColor="#ffffff"/>
-                    </div>
-
-
+                <div className="w-[90%] p-2 flex flex-wrap ">
+                  {project.tags.map((tag,index) => {
+                    return (
+                      <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1" key={index}>
+                        {tag}
+                      </p>
+                    );
+                  })}
                 </div>
 
-                <div className="relative h-[80%] w-1/4 bg-[#000]/30" >
-                    <img src="/project2.jpg" className="w-[100%] h-[150px]"></img>
-                    <h2 className="p-3 text-lg text-white font-medium tracking-[0.15rem]">Portfolio</h2>
+                <div className="absolute bottom-0 flex flex-row-reverse w-full ">
+                  {project.links != "" ? (
+                    <SocialIcon
+                      url={project.links}
+                      bgColor="transparent"
+                      fgColor="#ffffff"
+                    />
+                  ) : null}
 
-                    <p className="text-xs p-3 text-[#fff]/70">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
-
-                    <div className="w-[90%] p-2 flex flex-wrap ">
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">HTML</p>    
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">CSS</p>    
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Javascript</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">React Js</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">nextJs</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">npm</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Tailwind CSS</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Firebase</p> 
-
-                    </div> 
-
-                    <div className="absolute bottom-0 flex flex-row-reverse w-full ">
-                        <SocialIcon url="https://github.com/Keshav03/nextjs-portfolio" target="_blank" bgColor="transparent" fgColor="#ffffff"/>
-                        <SocialIcon url="/" target="_blank" bgColor="transparent" fgColor="#ffffff"/>
-                    </div>
+                  {project.github != "" ? (
+                    <SocialIcon
+                      url={project.github}
+                      bgColor="transparent"
+                      fgColor="#ffffff"
+                    />
+                  ) : null}
                 </div>
-
-                <div className="relative h-[80%] w-1/4 bg-[#000]/30" >
-                    <img src="/project3.png" className="w-[100%] h-[150px] max-h-max"></img>
-                    <h2 className="p-3 text-sm text-white font-medium tracking-[0.15rem]">Video Game Recommendation System </h2>
-                    <p className="text-xs p-3 text-[#fff]/70">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
-
-                    <div className="w-[90%] p-2 flex flex-wrap ">
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">HTML</p>    
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">CSS</p>    
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Javascript</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">React Js</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Django</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">SQLite</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Content Base</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Collaborative Filtering</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Python</p> 
-                        <p className="p-1 bg-[#fff]/10 text-[#fff]/70 text-xs rounded m-1">Recommendation Algorithms</p> 
-                    </div> 
-
-
-                    <div className="absolute bottom-0 flex flex-row-reverse w-full ">
-                        <SocialIcon url="https://github.com/Keshav03/QMUL_Final_Year_Project" target="_blank" bgColor="transparent" fgColor="#ffffff"/>
-                    </div>
-
-                </div>
-        
-            </div>
-
-
-            
-	
-		</div>
-            
-    )
+              </div>
+            );
+          })}
+        </div> 
+      </div>
+    );
 }
 
