@@ -1,0 +1,18 @@
+
+@keyframes firstBar {
+  from {background-color: white;}
+  to {background-color: yellow;}
+}
+
+.firstBar {
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+
+.menu {
+  opacity: 1;
+  height: 100%;
+  transform: translateY(0);
+  transition: transform 1s, height 1s, opacity 1s;
+}

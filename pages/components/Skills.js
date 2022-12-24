@@ -10,28 +10,28 @@ export default function Skills(props) {
     
 
     return (
-        <div className='relative h-auto p-5 bg-[#242526] w-screen mx-auto flex justify-center items-center'>
+        <div className='relative h-auto p-5 pb-10 bg-[#242526] w-screen mx-auto md:flex md:justify-center md:items-center'>
 			
 
-            <div className='flex flex-col justify-evenly items-center w-1/5 h-80 p-1 m-5'>
-                <h4 className= 'text-white -rotate-90 tracking-[0.5rem] text-xl uppercase'>Skills</h4>
-                <hr className='h-[30%] w-[2px] bg-[#36bbc4]'/>
+            <div className='relativ flex w-4/5 mx-auto flex-col items-center md:justify-evenly md:items-center md:w-1/5 md:h-80 md:p-1 md:m-5'>
+                <h4 className= 'relative text-white uppercase pb-2 tracking-[0.25rem] md:-top-2 md:-rotate-90 md:tracking-[0.5rem] md:text-xl md:uppercase'>Skills</h4>
+                <hr className='relative bg-[#36bbc4] border-0 w-[20%] h-[3px] md:w-[2px] md:h-[25%] md:-bottom-6 '/>
             </div>
 
-			<div className='flex justify-around items-center flex-wrap grid-cols-5 w-2/5 h-60 p-1'>  
+			<div className='w-4/5 pt-10 mx-auto flex justify-around items-center flex-wrap md:w-2/5 md:mx-0 h-60 p-1'>  
                 
-                <FaReact className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white  cursor-pointer' />
-                <FaHtml5 className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
-                <FaCss3 className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
-                <FaPython className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
-                <FaJava className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
-                <SiJavascript className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
-                <DiDjango className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
-                <DiBootstrap className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
-                <DiPhp className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
-                <DiJqueryLogo className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
-                <DiGit className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
-                <DiNpm className='text-[#fff]/60 w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
+                <FaReact className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white  cursor-pointer' />
+                <FaHtml5 className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
+                <FaCss3 className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
+                <FaPython className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
+                <FaJava className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer' />
+                <SiJavascript className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
+                <DiDjango className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
+                <DiBootstrap className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
+                <DiPhp className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
+                <DiJqueryLogo className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
+                <DiGit className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
+                <DiNpm className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-white cursor-pointer'/>
             </div>
 
 

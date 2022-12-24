@@ -49,7 +49,6 @@ export default function Projects(props) {
                 })
         }
         fetchProjects();
-        console.log(projects)
     });
 
     return (
@@ -57,17 +56,18 @@ export default function Projects(props) {
         className="relative h-auto p-4  bg-[#000]/30 w-screen mx-auto flex flex-col justify-center items-center"
         id="project"
       >
-        <div className="flex flex-col justify-evenly items-center w-1/5 p-1 m-5">
-          <h4 className="text-white tracking-[0.5rem] text-xl uppercase p-2">
+        <div className="flex flex-col justify-evenly items-center w-4/5 md:w-1/5 md:p-1 md:m-5">
+          <h4 className="text-white relative text-white uppercase pb-2 tracking-[0.25rem] md:tracking-[0.5rem] md:text-xl uppercase md:p-2">
             Projects
           </h4>
-          <hr className="h-[2px] w-[30%] bg-[#36bbc4] borderImageoutline-0" />
+          <hr className="h-[2px] w-[25%]  md:h-[2px] md:w-[30%] bg-[#36bbc4] border-0" />
         </div>
 
-        <div className=" flex justify-evenly items-evenly w-3/5 h-[750px] p-2 mt-10">
+        <div className="relative flex flex-col justify-center w-4/5 h-auto mt-10 md:flex-row md:justify-evenly md:items-evenly md:w-3/5 md:h-[750px] md:p-2 ">
           {projects.map((project) => {
             return (
-              <div className="relative h-[80%] w-1/4 bg-[#000]/30 overflow-hidden" key={project.id}>
+              <div className="relative bg-[#000]/30 h-[575px] md:h-[80%] w-full mt-6 md:w-1/4 " key={project.id}>
+
                 <div className="relative w-[100%] h-[150px]">
                     <Image 
                     alt=""
