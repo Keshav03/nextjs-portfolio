@@ -17,10 +17,10 @@ export default function Footer(props) {
                 <SocialIcon url="https://www.instagram.com/keshav_bokhoree/" bgColor="transparent" fgColor="#ffffff"/>
             </div>
             <div className='w-4/5 flex justify-evenly self-center uppercase text-xs px-2 py-5 md:p-5 md:justify-between md:w-2/5 text-white tracking-widest p-b-10 '>
-                <Link href="/" className='hover:text-[#36bbc4]' >Home</Link>
-                <Link href="" className='hover:text-[#36bbc4]'>About</Link>
-                <Link href="" className='hover:text-[#36bbc4]'>Projects</Link>
-                <Link href="" className='hover:text-[#36bbc4]'>Contact</Link>
+                <Link href="/#home" className='hover:text-[#36bbc4]' >Home</Link>
+                <Link href="/#about" className='hover:text-[#36bbc4]'>About</Link>
+                <Link href="/#project" className='hover:text-[#36bbc4]'>Projects</Link>
+                <Link href="/#contact" className='hover:text-[#36bbc4]'>Contact</Link>
             </div>
 				
 

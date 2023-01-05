@@ -24,7 +24,7 @@ export default function Header(props) {
 
     
     return (
-    <div className='fixed bg-[#242526] px-10 py-1 md:py-0 w-screen sticky top-0 z-20'>
+    <div className='fixed bg-[#242526]/95 px-10 py-1 md:py-0 w-screen sticky top-0 z-20'>
 
         <div className="absolute flex flex-col justify-center self-center top-0 left-0 z-15 w-full h-[100vh] hidden bg-gray-600 md:hidden lg:hidden" id="mobileMenu">
 
