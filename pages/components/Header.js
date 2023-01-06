@@ -24,12 +24,12 @@ export default function Header(props) {
 
     
     return (
-    <div className='fixed bg-[#242526]/95 px-10 py-1 md:py-0 w-screen sticky top-0 z-20'>
+    <div className='fixed bg-[#242526]/90 px-10 py-1 md:py-0 w-screen sticky top-0 z-20'>
 
         <div className="absolute flex flex-col justify-center self-center top-0 left-0 z-15 w-full h-[100vh] hidden bg-gray-600 md:hidden lg:hidden" id="mobileMenu">
 
             <div className='flex flex-col justify-center justify-evenly self-center text-lg w-2/3 text-white text-center tracking-[.2em]'>
-                <Link href="/#home" className="text-white hover:text-[#36bbc4] uppercase" px-3 py-2 >Home</Link>
+                <Link href="/#home" className="text-white hover:text-[#36bbc4] uppercase px-3 py-2" >Home</Link>
                 <Link href="/#about" className="text-white hover:text-[#36bbc4] uppercase px-3 py-2">About</Link>
                 <Link href="/#project" className="text-white hover:text-[#36bbc4] uppercase  px-3 py-2">Projects</Link>
                 <Link href="/#contact" className="text-white hover:text-[#36bbc4] uppercase px-3 py-2">Contact</Link>
@@ -46,7 +46,7 @@ export default function Header(props) {
 
         </div>
 
-        <div className="relative flex justify-between items-center h-[10vh] w-full mx-auto md:w-4/5 md:p-10 md:justify-evenly md:items-baseline">
+        <div className="relative flex justify-betweeen items-center h-[10vh] w-full mx-auto md:w-full md:max-w-7xl md:p-10 md:justify-between md:items-baseline ">
 
             <div className="relative w-[60px] h-[60px]   md:w-[75px] md:h-[75px] md:-top-6" >   
                 <Image alt="" src="/logo.png" layout='fill'/>
@@ -60,7 +60,7 @@ export default function Header(props) {
             </div>
 
 
-            <div className='hidden md:flex justify-end self-center '>  
+            <div className='hidden md:flex justify-end self-center md:w-'>  
                 <SocialIcon url="https://twitter.com/keshav_bokhoree" bgColor="transparent" fgColor="#ffffff"  className='h-4'/>
                 <SocialIcon url="https://github.com/keshav03" bgColor="transparent" fgColor="#ffffff"/>
                 <SocialIcon url="https://www.linkedin.com/in/keshav-yogeshwar-b-b73187167/" bgColor="transparent" fgColor="#ffffff"/>

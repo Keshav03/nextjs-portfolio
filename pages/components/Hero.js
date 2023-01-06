@@ -7,13 +7,13 @@ export default function Hero(props) {
     
 
     return (
-        <div className=' relative h-[90vh] bg-[#242526] w-4/5 mx-auto flex flex-col justify-center items-center md:h-[90vh]' id="home">
+        <div className=' relative h-[90vh] bg-[#242526] w-4/5 mx-auto flex flex-col justify-center items-center md:h-[90vh] md:w-screen  md:max-w-7xl' id="home">
 
 
             <div className='relative w-[250px] h-[250px] -top-[15%]'>
                 <Image alt="" src="/Image.png" layout='fill'/>
             </div>
-            <h1 className='relative text-white -top-[5%] text-center h-[40px] text-3xl md:text-6xl md:text-900 ' ><Typewriter
+            <h1 className='relative text-white -top-[5%] text-center h-[40px] text-3xl md:text-6xl md:text-900 '><Typewriter
                     options={{
                         strings: [' < Hello There, ', 'I am Keshav Bokhoree! />'],
                         autoStart: true,

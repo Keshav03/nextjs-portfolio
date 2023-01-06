@@ -53,7 +53,7 @@ export default function Projects(props) {
 
     return (
       <div
-        className="relative h-auto p-4  bg-[#000]/30 w-screen mx-auto flex flex-col justify-center items-center"
+        className="relative h-auto p-4  bg-[#000]/30 w-screen mx-auto flex flex-col justify-center items-center "
         id="project"
       >
         <div className="flex flex-col justify-evenly items-center w-4/5 md:w-1/5 md:p-1 md:m-5">
@@ -63,10 +63,10 @@ export default function Projects(props) {
           <hr className="h-[2px] w-[25%]  md:h-[2px] md:w-[30%] bg-[#36bbc4] border-0" />
         </div>
 
-        <div className="relative flex flex-col justify-center w-4/5 h-auto mt-10 md:flex-row md:justify-evenly md:items-evenly md:w-3/5 md:h-[750px] md:p-2 ">
+        <div className="relative flex flex-col justify-center w-4/5 h-auto mt-10 md:flex-row md:justify-between md:items-evenly md:w-4/5 md:h-[750px] md:p-2 md:max-w-7xl ">
           {projects.map((project) => {
             return (
-              <div className="relative bg-[#000]/30 h-[575px] md:h-[80%] w-full mt-6 md:w-1/4 " key={project.id}>
+              <div className="relative bg-[#000]/30 h-[575px] md:h-[80%] w-full mt-6 md:w-1/4  " key={project.id}>
 
                 <div className="relative w-[100%] h-[150px]">
                     <Image 

@@ -25,24 +25,24 @@ export default function Contact(props) {
                 <div className='w-full flex flex-col lg:flex-row lg:space-x-5'>
                     <div className='w-full pb-2 lg:w-1/2'> 
                         <label className='text-white tracking-[0.1rem] pb-1'>Full Name</label>
-                        <input className='w-full text-white text-sm rounded py-[0.125rem] px-2 bg-transparent border-[1px] border-gray-700 outline-none' placeholder='Enter your Full Name ...' ></input>
+                        <input className='w-full text-white text-sm rounded py-[0.4rem] px-3 bg-transparent border-[1px] border-gray-700 outline-none' placeholder='Enter your Full Name ...' ></input>
                     </div>
                     <div className='w-full pb-2 lg:w-1/2'> 
                         <label className='text-white tracking-[0.1rem] pb-1'>Email</label>
-                        <input className='w-full  text-white text-sm rounded py-[0.125rem] px-2 bg-transparent border-[1px] border-gray-700 outline-none ' placeholder='Enter your Email ...' ></input>
+                        <input className='w-full  text-white text-sm rounded py-[0.4rem] px-3 bg-transparent border-[1px] border-gray-700 outline-none ' placeholder='Enter your Email ...' ></input>
                     </div>
                 </div>
                 <div className='w-3/5 pb-2 lg:w-1/5'> 
                     <label className='text-white tracking-[0.1rem] pb-1'>Subject</label>
-                    <input className='w-full text-white  text-sm rounded py-[0.125rem] px-2 bg-transparent border-[1px] border-gray-700 outline-none ' placeholder='Enter Subject ...' ></input>
+                    <input className='w-full text-white  text-sm rounded py-[0.4rem] px-3 bg-transparent border-[1px] border-gray-700 outline-none ' placeholder='Enter Subject ...' ></input>
                 </div>
                 <div className='w-full pb-2'> 
                     <label className='text-white tracking-[0.1rem] pb-1'>Message</label>
-                    <input className='w-full text-white  text-sm min-h-[5rem] rounded pt-[0.125rem] px-2 bg-transparent border-[1px] border-gray-700 outline-none ' placeholder='Enter your Message ...' ></input>
+                    <input className='w-full text-white  text-sm h-[2rem] rounded pt-[1rem] pb-[5rem] px-3 bg-transparent border-[1px] border-gray-700 outline-none ' placeholder='Enter your Message ...' ></input>
                 </div>
                 
                 <div className='relative w-full h-auto pb-2' >
-                    <button className='relative text-white  text-sm float-right bg-[#36bbc4] py-1 px-6 rounded outline-none mt-2 text-white border-0 hover:bg-white hover:text-[#36bbc4] transition duration-700 ease-out'>Submit</button>
+                    <button className='relative text-white  text-sm float-right bg-[#36bbc4]/70 py-1 px-6 rounded outline-none mt-2 text-white border-0 hover:bg-white hover:text-[#36bbc4] transition duration-700 ease-out'>Submit</button>
                 </div>
 
             </div>
