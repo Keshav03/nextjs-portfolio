@@ -43,20 +43,20 @@ export default function Projects(props) {
             "image":"/project3.png"
     }]);
     const dbInstance = collection(database, 'projects');
-    // useEffect(() => {
-    //     const fetchProjects = async () => {
-    //         await getDocs(dbInstance)
-    //             .then((querySnapshot)=>{              
-    //                 const newData = querySnapshot.docs
-    //                     .map((doc) => ({...doc.data(), id:doc.id }));
-    //                 // setProjects(newData);                
-    //             }).catch(err => {
-    //               throw Error("Could Not load data!")
-    //                 console.log(err)
-    //             })
-    //     }
-    //     fetchProjects();
-    // });
+    useEffect(() => {
+        const fetchProjects = async () => {
+            // await getDocs(dbInstance)
+            //     .then((querySnapshot)=>{              
+            //         const newData = querySnapshot.docs
+            //             .map((doc) => ({...doc.data(), id:doc.id }));
+            //         // setProjects(newData);                
+            //     }).catch(err => {
+            //       throw Error("Could Not load data!")
+            //         console.log(err)
+            //     })
+        }
+        fetchProjects();
+    });
 
     return (
       <div

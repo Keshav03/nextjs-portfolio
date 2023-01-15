@@ -23,19 +23,21 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Suspense fallback={<Header></Header>}>
+      <Suspense fallback={<Header></Header>}>
+        <main>
           <Header></Header>
           <Hero></Hero>
           <About></About>
           <Skills></Skills>
           {/* <ProjectErrorBoundary> */}
-          <Projects></Projects>
+              <Suspense fallback={<p>loading ...</p>}>
+                  <Projects></Projects>
+              </Suspense>
           {/* </ProjectErrorBoundary> */}
           <Contact></Contact>
           <Footer></Footer>
-        </Suspense>
-      </main>
+        </main>
+      </Suspense>
     </div>
   );
 }
