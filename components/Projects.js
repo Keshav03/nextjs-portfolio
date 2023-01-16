@@ -36,7 +36,7 @@ export default function Projects(props) {
         },{
             "id": 3,
             "name": "Video Game Recommendation System",
-            "descriptions" : ["o Implemented a Full Stack Application that recommends video games to users using 2 type of recommendation algorithm content based and collaborative filtering" , "o Application implemented using React as frontend & Django as Backend Designed REST API from scratch","o Project achieved by studying and analysing different machine learning algorithms to predict the best possible result by comparing them" , "o User Registration and Login System" ],
+            "descriptions" : ["o Implemented a Full Stack Application that recommends video games to users using 2 type of recommendation algorithm content based and collaborative filtering" , "o Application implemented using React as frontend & Django as Backend Designed REST API from scratch","o Project achieved by studying and analysing different machine learning algorithms to predict the best possible result by comparing them" , "o User Registration and Login System","o CRUD operation" ],
             "links":"",
             "github":"https://github.com/Keshav03/QMUL_Final_Year_Project",
             "tags":["HTML","CSS","JavaScript","React Js", "Django" , "Python", "Recommendation Algorithms","Content Based","Collaborative Filtering"],
