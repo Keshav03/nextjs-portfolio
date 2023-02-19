@@ -1,6 +1,6 @@
 import React from 'react'
 import StyledComponent from '../../components/StyledComponent.js'
-s
+
 
 function StyledComponentDemo() {
   return (
