@@ -33,3 +33,10 @@ html {
     animation-name: secondBar;
     animation-duration: 2s;
   }
+
+
+  .paragraph {
+    margin:20px;
+    color:orange;
+    font-weight: bold;
+}

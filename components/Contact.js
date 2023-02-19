@@ -3,10 +3,7 @@ import { SocialIcon } from 'react-social-icons';
 import Link from 'next/link';
 
 import { useState } from 'react';
-
-import { FaReact,FaHtml5,FaCss3 ,FaPython, FaVuejs, FaJava } from 'react-icons/fa';
-import { DiJavascript1, DiDjango, DiBootstrap, DiPhp,DiJqueryLogo, DiGit, DiNpm } from 'react-icons/di';
-import { SiJavascript,SiTypescript } from 'react-icons/si';
+import {AiOutlineArrowRight} from 'react-icons/ai'
 
 export default function Contact(props) {
 
@@ -14,8 +11,6 @@ export default function Contact(props) {
     const [email, setEmail] = useState("")
     const [subject, setSubject] = useState("")
     const [message, setMessage] = useState("")
-    
-
 
     let handleSubmit = (e) => {
         if (fullName != "" && email != "" && subject !="" && message!=""){
@@ -40,39 +35,40 @@ export default function Contact(props) {
                 
                 <div className='w-full flex flex-col lg:flex-row lg:space-x-5'>
                     <div className='w-full pb-2 lg:w-1/2'> 
-                        <label className='text-white tracking-[0.1rem] pb-1'>Full Name {fullName}</label>
-                        <input  className='w-full text-[#36bbc4] text-sm rounded py-[0.4rem] px-3 bg-transparent border-[1px] border-gray-700 outline-none focus:border-[#36bbc4]' 
+                        <label className='text-white tracking-[0.1rem] pb-1'>Your Name {fullName}</label>
+                        <input  className='w-full text-[#36bbc4] text-sm py-[0.4rem] bg-transparent border-b-[1px] border-gray-700 outline-none focus:border-[#36bbc4]' 
                                 placeholder='Enter your Full Name ...' 
                                 onChange={(e)=>setFullName(e.target.value)}
                         ></input>
                     </div>
                     <div className='w-full pb-2 lg:w-1/2'> 
                         <label className='text-white tracking-[0.1rem] pb-1'>Email</label>
-                        <input  className='w-full  text-white text-sm rounded py-[0.4rem] px-3 bg-transparent border-[1px] border-gray-700 outline-none focus:border-[#36bbc4]' 
+                        <input  className='w-full  text-white text-sm  py-[0.4rem] bg-transparent border-b-[1px] border-gray-700 outline-none focus:border-[#36bbc4]' 
                                 placeholder='Enter your Email ...' 
                                 onChange={(e)=>setEmail(e.target.value)}        
                         ></input>
                     </div>
                 </div>
-                <div className='w-3/5 pb-2 lg:w-1/5'> 
+                <div className='w-3/5 pb-2 lg:w-2/5'> 
                     <label className='text-white tracking-[0.1rem] pb-1'>Subject</label>
-                    <input  className='w-full text-white  text-sm rounded py-[0.4rem] px-3 bg-transparent border-[1px] border-gray-700 outline-none focus:border-[#36bbc4]' 
+                    <input  className='w-full text-white  text-sm  py-[0.4rem] bg-transparent border-b-[1px] border-gray-700 outline-none focus:border-[#36bbc4]' 
                             placeholder='Enter Subject ...' 
                             onChange={(e)=>setSubject(e.target.value)}
                     ></input>
                 </div>
                 <div className='w-full pb-2'> 
                     <label className='text-white tracking-[0.1rem] pb-1'>Message {message}</label>
-                    <input  className='w-full text-white  text-sm h-[2rem] rounded pt-[1rem] pb-[5rem] px-3 bg-transparent border-[1px] border-gray-700 outline-none focus:border-[#36bbc4]' 
+                    <input  className='w-full text-white  text-sm h-[2rem] pt-[1rem] pb-[5rem] bg-transparent border-b-[1px] border-gray-700 outline-none focus:border-[#36bbc4]' 
                             placeholder='Enter your Message ...' 
                             onChange={(e)=>setMessage(e.target.value)}        
                     ></input>
                 </div>
                 
                 <div className='relative w-full h-auto pb-2' >
-                    <button className='relative text-sm float-right bg-[#36bbc4]/70 py-3 px-9 rounded outline-none mt-2 text-white border-0 hover:bg-white hover:text-[#36bbc4] transition duration-700 ease-out'
+                    <button className='relative flex justify-center items-center text-sm float-right bg-[#36bbc4]/70 py-3 px-9 rounded uppercase outline-none mt-2 text-white border-0 hover:bg-white hover:text-[#36bbc4] transition duration-700 ease-out'
                             onSubmit={handleSubmit}
-                    > Submit
+                    >
+                        Send Message <AiOutlineArrowRight size={35} className='pl-3'></AiOutlineArrowRight>
                     </button>
                 </div>
 

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import ErrorBoundary from "../components/ErrorBoundary"
 import ProjectErrorBoundary from '../components/ProjectErrorBoundary'
 
+
 import Header from '../components/Header'
 import Modal from '../components/Modal'
 import Hero from '../components/Hero'
@@ -12,12 +13,32 @@ import Skills from '../components/Skills'
 import About from '../components/AboutUs'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
-import { Suspense } from 'react'
+import Loading from '../components/Loading'
+import { Suspense, useState, useEffect } from 'react'
 
 export default function Home() {
 
-  return (
-    <div className="relative h-screen scroll-smooth bg-[#242526]  scrollbar scrollbar-track-gray-600 scrollbar-thumb-[#36bbc4]/60">
+  let [loading,setLoading] = useState(true)
+
+  useEffect(() => {
+    const onPageLoad = () => {
+      setLoading(false);
+      console.log("Loaded!")
+    };
+
+    if (document.readyState === 'complete') {
+      setTimeout(onPageLoad,3500)
+    } else {
+      window.addEventListener('load', onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  })
+
+    return (
+      <div>
+    {!loading ?  
+      <div className="relative h-screen scroll-smooth bg-[#242526]  scrollbar scrollbar-track-gray-600 scrollbar-thumb-[#36bbc4]/60">
       <Head>
         <title>Keshav Bokhoree - Junior Developer</title>
         <link rel="icon" href="/favicon.ico" />
@@ -39,5 +60,10 @@ export default function Home() {
         </main>
       </Suspense>
     </div>
-  );
+    :
+      <Loading loading={setLoading}></Loading>
+    }
+    </div>
+
+    )
 }
