@@ -5,6 +5,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import {AiOutlineArrowRight} from 'react-icons/ai'
 
+
+import { motion } from 'framer-motion';
+
+
 export default function Contact(props) {
 
     const [fullName, setFullName] = useState("")
@@ -67,8 +71,31 @@ export default function Contact(props) {
                 <div className='relative w-full h-auto pb-2' >
                     <button className='relative flex justify-center items-center text-sm float-right bg-[#36bbc4]/70 py-3 px-9 rounded uppercase outline-none mt-2 text-white border-0 hover:bg-white hover:text-[#36bbc4] transition duration-700 ease-out'
                             onSubmit={handleSubmit}
-                    >
-                        Send Message <AiOutlineArrowRight size={35} className='pl-3'></AiOutlineArrowRight>
+                    >Send Message  
+
+
+
+                        {/* <svg 
+                            fill="none"
+                            width="35" 
+                            height="35" 
+                            viewBox='0 0 35 35' 
+                            className="bg-red-500 pl-3"
+                            strokeWidth={3}
+                        >
+                            <motion.path
+                                    d="M5 13l4 4L19 7"                                
+                                    animate={{pathLength:0}}
+                                    initial={{opacity:0}}
+                                    transition={{ duration: 0.1 }}
+                            >
+                            </motion.path>
+
+
+                        </svg> */}
+
+
+                        <AiOutlineArrowRight size={35} className='pl-3'></AiOutlineArrowRight>
                     </button>
                 </div>
 

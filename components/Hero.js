@@ -2,6 +2,7 @@ import React from 'react';
 import Typewriter from 'typewriter-effect';
 import Image from 'next/image';
 
+import { motion } from 'framer-motion';
 
 export default function Hero(props) {
     
@@ -10,9 +11,14 @@ export default function Hero(props) {
         <div className=' relative h-[90vh] bg-[#242526] w-4/5 mx-auto flex flex-col justify-center items-center md:h-[90vh] md:w-screen  md:max-w-7xl' id="home">
 
 
-            <div className='relative w-[250px] h-[250px] -top-[15%]'>
+            <motion.div 
+                className='relative w-[250px] h-[250px] -top-[15%]'
+                initial={{y:-50,opacity:0}}
+                whileInView={{y:0,opacity:1}}
+                transition={{duration:0.5,opacity: { ease: "linear" }}}
+            >
                 <Image alt="" src="/Image.png" layout='fill'/>
-            </div>
+            </motion.div>
             <h1 className='relative text-white -top-[5%] text-center h-[40px] text-3xl md:text-6xl md:text-900 '><Typewriter
                     options={{
                         strings: [' < Hello There, ', 'I am Keshav Bokhoree! />'],

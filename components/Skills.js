@@ -6,9 +6,29 @@ import { FaReact,FaHtml5,FaCss3 ,FaPython, FaVuejs, FaJava } from 'react-icons/f
 import { DiJavascript1, DiDjango, DiBootstrap, DiPhp,DiJqueryLogo, DiGit, DiNpm } from 'react-icons/di';
 import { SiJavascript,SiTypescript } from 'react-icons/si';
 
-export default function Skills(props) {
-    
+import {easeIn, easeInOut, motion} from 'framer-motion'
 
+export default function Skills(props) {
+
+    let skillVariants = {
+        show:{
+            transition:{type:"string",delayChildren:0.2,staggerChildren:0.2}
+        }
+    }
+
+    let itemVariants = {
+        show:{
+            x:0,
+
+        },
+        hide:{
+            x:-20
+        }
+
+    }
+
+
+    
     return (
         <div className='relative h-auto p-5 pb-10 bg-[#242526] w-screen mx-auto md:flex md:justify-between md:items-center md:max-w-7xl'>
 			
@@ -18,21 +38,62 @@ export default function Skills(props) {
                 <hr className='relative bg-[#36bbc4] border-0 w-[20%] h-[3px] md:w-[2px] md:h-[25%] md:-bottom-6 '/>
             </div>
 
-			<div className='w-4/5 pt-10 mx-auto flex justify-around items-center flex-wrap md:w-4/5 md:mx-0 h-60 p-1'>  
-                
-                <FaReact className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4]  cursor-pointer' />
-                <FaHtml5 className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer' />
-                <FaCss3 className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer' />
-                <FaPython className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer' />
-                <FaJava className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer' />
-                <SiJavascript className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer'/>
-                <DiDjango className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer'/>
-                <DiBootstrap className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer'/>
-                <DiPhp className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer'/>
-                <DiJqueryLogo className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer'/>
-                <DiGit className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer'/>
-                <DiNpm className='text-[#fff]/60 w-[25%] md:w-[12%] h-auto p-3 hover:text-[#36bbc4] cursor-pointer'/>
-            </div>
+			<motion.div className='w-4/5 pt-10 mx-auto flex justify-around items-center flex-wrap md:w-4/5 md:mx-0 h-60 p-1'
+                variants={skillVariants}
+                animate="show"
+                initial="hide"
+                whileInView="show"
+            
+            >  
+                <motion.div variants={itemVariants} className="w-[25%] md:w-[12%] h-auto ">  
+                    <FaReact className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="w-[25%] md:w-[12%] h-auto ">  
+                    <FaHtml5 className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants}  className="w-[25%] md:w-[12%] h-auto ">  
+                    <FaCss3 className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="w-[25%] md:w-[12%] h-auto ">  
+                    <FaPython className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants}  className="w-[25%] md:w-[12%] h-auto ">  
+                    <FaJava className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants}  className="w-[25%] md:w-[12%] h-auto ">  
+                    <SiJavascript className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="w-[25%] md:w-[12%] h-auto ">  
+                    <DiDjango className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="w-[25%] md:w-[12%] h-auto ">  
+                    <DiBootstrap className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants}  className="w-[25%] md:w-[12%] h-auto ">  
+                    <DiPhp className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="w-[25%] md:w-[12%] h-auto ">  
+                    <DiJqueryLogo className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="w-[25%] md:w-[12%] h-auto ">  
+                    <DiGit className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="w-[25%] md:w-[12%] h-auto ">  
+                    <DiNpm className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
+                </motion.div>
+
+            </motion.div>
 
 
 
