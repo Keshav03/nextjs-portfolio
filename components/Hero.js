@@ -13,9 +13,18 @@ export default function Hero(props) {
 
             <motion.div 
                 className='relative w-[250px] h-[250px] -top-[15%]'
-                initial={{y:-50,opacity:0}}
-                whileInView={{y:0,opacity:1}}
-                transition={{duration:0.5,opacity: { ease: "linear" }}}
+                initial={{y:-100,opacity:0}}
+                animate={{y:0}}
+                whileInView={{
+                    y:0,
+                    opacity:1,
+                    transition:{
+                        duration:1,
+                        type:"spring",
+                        stiffness: 200 
+                    }
+                }}
+                
             >
                 <Image alt="" src="/Image.png" layout='fill'/>
             </motion.div>

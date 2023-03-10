@@ -18,7 +18,7 @@ export default function Header(props) {
         mobileMenu.classList.toggle("menu")
     }
 
-    let [animate,toggleAnimation] = useCycle("open","close")
+    let [animate,toggleAnimation] = useCycle("close","open")
     
 
     let mobileMenuVariants = {
@@ -28,7 +28,7 @@ export default function Header(props) {
         },
         close:{
             opacity:0,
-            transition:{duration:0.2,when:"afterChildren"}
+            transition:{duration:0.2,delay:0.5}
         }
     }
 
@@ -72,6 +72,26 @@ export default function Header(props) {
                 stiffness: 100,    
             }
         }
+
+    }
+
+
+    let socialVariants = {
+        open:{
+            x:0,
+            opacity:1,
+            transition:{
+                type:"spring",
+                stiffness:100,
+                delayChildren:0.1,
+                staggerChildren:0.2
+            }
+        },
+        close:{
+            x:-400,
+            opacity:0
+
+        }
     }
 
     return (
@@ -92,7 +112,7 @@ export default function Header(props) {
                 className='opacity-0 flex flex-col justify-center self-center bg-[#353935] w-[100%] h-[100%] '
                 variants={mobileMenuVariants}
                 animate={animate}
-                intial={{opacity:0}}            
+                intial="close"  
                 >
 
                 <motion.div 
@@ -100,19 +120,22 @@ export default function Header(props) {
                     variants={navVariant}
                     > 
                     <ul className='list-none '>
-                        <motion.li className='px-3 py-3 hover:text-[#36bbc4]' variants={linksVariants}><Link href="/#home" >Home</Link></motion.li>
-                        <motion.li className='px-3 py-3 hover:text-[#36bbc4]' variants={linksVariants}><Link href="/#about" >About</Link></motion.li>
-                        <motion.li className='px-3 py-3 hover:text-[#36bbc4]' variants={linksVariants}><Link href="/#project" >Projects</Link></motion.li>
-                        <motion.li className='px-3 py-3 hover:text-[#36bbc4]' variants={linksVariants}><Link href="/#contact" >Contact</Link></motion.li>
+                        <motion.li className='px-3 py-3 hover:text-[#36bbc4] hover:text-[1.3em]' variants={linksVariants}><Link href="/#home" >Home</Link></motion.li>
+                        <motion.li className='px-3 py-3 hover:text-[#36bbc4] hover:text-[1.3em]' variants={linksVariants}><Link href="/#about" >About</Link></motion.li>
+                        <motion.li className='px-3 py-3 hover:text-[#36bbc4] hover:text-[1.3em]' variants={linksVariants}><Link href="/#project" >Projects</Link></motion.li>
+                        <motion.li className='px-3 py-3 hover:text-[#36bbc4] hover:text-[1.3em]' variants={linksVariants}><Link href="/#contact" >Contact</Link></motion.li>
                     </ul>
                 </motion.div>
 
-                <div className='relative top-20 md:hidden justify-end self-center '>  
+                <motion.div 
+                    className='relative top-20 md:hidden justify-end self-center'
+                    variants={socialVariants}
+                >
                         <SocialIcon url="https://twitter.com/keshav_bokhoree" bgColor="transparent" fgColor="#ffffff"  className='h-4'/>
                         <SocialIcon url="https://github.com/keshav03" bgColor="transparent" fgColor="#ffffff"/>
                         <SocialIcon url="https://www.linkedin.com/in/keshav-yogeshwar-b-b73187167/" bgColor="transparent" fgColor="#ffffff"/>
                         <SocialIcon url="https://www.instagram.com/keshav_bokhoree/" bgColor="transparent" fgColor="#ffffff"/>
-                </div>
+                </motion.div>
 
             </motion.div>
 
