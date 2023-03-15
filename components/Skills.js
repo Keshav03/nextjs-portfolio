@@ -12,18 +12,32 @@ export default function Skills(props) {
 
     let skillVariants = {
         show:{
-            transition:{type:"string",delayChildren:0.2,staggerChildren:0.2}
+            x:-0,
+            transition:{
+                type:"spring",
+                duration:2,
+                // delayChildren:0.2,
+                // staggerChildren:0.2,        
+            }
+        },
+        hide:{
+            x:-1000
         }
+        
     }
 
     let itemVariants = {
-        show:{
-            x:0,
+        // show:{
+        //     x:0,
+        // },
+        // hide:{
+        //     x:-1000,
+        //     transition:{
+        //         type:"spring",
+        //         stiffness:100,
 
-        },
-        hide:{
-            x:-20
-        }
+        //     }
+        // }
 
     }
 
@@ -45,6 +59,7 @@ export default function Skills(props) {
                 whileInView="show"
             
             >  
+
                 <motion.div variants={itemVariants} className="w-[25%] md:w-[12%] h-auto ">  
                     <FaReact className='text-[#fff]/60 w-[100%] h-[100%] p-3 hover:text-[#36bbc4] cursor-pointer' />
                 </motion.div>

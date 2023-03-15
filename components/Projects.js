@@ -28,10 +28,10 @@ export default function Projects(props) {
             },{
                 "id": 2,
                 "name": "Portfolio",
-                "descriptions" : ["o Tool to showcase my projects as a developer and show off my skills and abilities as well as to provide personal information about myself." , "o Constantly reviewing, redesigning website and try new technologies to improve user experience and hence build up my skills even further."],
+                "descriptions" : ["o Tool to showcase my projects as a developer and show off my skills and abilities as well as to provide personal information about myself." , "o Constantly reviewing, redesigning website and try new technologies to improve user experience and hence build up my skills even further.", "o Experiencing and making use of Framer Motion to animate part of the projects"],
                 "links":"https://keshavbokhoree.com/",
                 "github":"https://github.com/Keshav03/nextjs-portfolio",
-                "tags":["HTML","CSS","JavaScript","React Js", "Next Js" , "Tailwind CSS", "Firebase"],
+                "tags":["HTML","CSS","JavaScript","React Js", "Next Js" , "Tailwind CSS", "Firebase", "Framer Motion"],
                 "image":"/project2.jpg"
         },{
             "id": 3,
@@ -60,7 +60,7 @@ export default function Projects(props) {
 
     return (
       <div
-        className="relative h-auto p-4  bg-[#000]/30 w-screen mx-auto flex flex-col justify-center items-center "
+        className="relative h-auto p-4 bg-[#000]/30 w-screen mx-auto flex flex-col justify-center items-center "
         id="project"
       >
         <div className="flex flex-col justify-evenly items-center w-4/5 md:w-1/5 md:p-1 md:m-5">
@@ -72,7 +72,7 @@ export default function Projects(props) {
         <div className="relative flex flex-col justify-center w-4/5 h-auto mt-10 md:flex-row md:justify-between md:items-evenly md:w-4/5 md:h-[750px] md:p-2 md:max-w-7xl ">
           {projects.map((project) => {
             return (
-              <div className="relative bg-[#000]/30 h-[575px] h-max-auto md:h-[80%] w-full mt-6 md:w-1/4  " key={project.id}>
+              <div className="relative bg-[#000]/30  h-[650px] h-max-auto pb-4  md:h-[90%] w-full mt-6 md:w-1/4  " key={project.id}>
 
                 <div className="relative w-[100%] h-[150px]">
                     <Image 

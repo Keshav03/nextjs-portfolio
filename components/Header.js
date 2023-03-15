@@ -28,7 +28,8 @@ export default function Header(props) {
         },
         close:{
             opacity:0,
-            transition:{duration:0.2,delay:0.5}
+            transition:{duration:0.2,delay:0.5},
+            zIndex:0
         }
     }
 
@@ -94,25 +95,78 @@ export default function Header(props) {
         }
     }
 
+    let firstBar = {
+        open:{
+            rotate:45,
+            translateY:15,
+            translateX:10,
+            transition:{
+                type:"ease",
+                duration:0.5
+            }
+
+        },
+        close:{
+            x:0,
+            rotateX:0,
+        }
+
+    } 
+
+    let secondBar = {
+        open:{
+            x:-100,
+            opacity:0,
+        },
+        close:{
+            x:0,
+            rotateX:0,
+        }
+
+    } 
+
+
+    let thirdBar = {
+        open:{
+            rotate:-45,
+            translateY:-17,
+            translateX:10,
+            transition:{
+                type:"ease",
+                duration:0.5
+            }
+
+        },
+        close:{
+            x:0,
+            rotateX:0,
+        }
+
+    } 
+
     return (
-    <div className='fixed bg-[#242526]/90 px-10 py-1 md:py-0 w-screen sticky top-0 z-20'>
+    <motion.div className='fixed bg-[#242526]/90 px-10 py-1 md:py-0 w-screen sticky top-0 z-20'>
 
         <motion.div className="absolute flex flex-col justify-center self-center top-0 left-0 z-15 w-full h-[100vh] md:hidden lg:hidden">
             <motion.div onClick={toggleAnimation} className='absolute z-20 right-[10vw] top-[4vh] w-[10%] h-[4vh] md:hidden cursor-pointer'
                 variants={hamMenuVariants}
                 animate={animate}
-                intial="close"
+                // intial="close"
             >
-                <div className='absolute top-0 w-[70%] h-[7%] bg-white' id="firstBar"></div>
-                <div className='absolute top-[50%] -translate-y-[50%] w-[100%] h-[7%] bg-white' id="secondBar"></div>
-                <div className='absolute bottom-0 w-[50%] h-[7%] bg-white' id="thirdBar"></div>
+                <motion.div className='absolute top-0 w-[70%] h-[7%] bg-white' id="firstBar"
+                            variants={firstBar}
+                ></motion.div>
+                <motion.div className='absolute top-[50%] -translate-y-[50%] w-[100%] h-[7%] bg-white' id="secondBar"
+                            variants={secondBar}
+                ></motion.div>
+                <motion.div className='absolute bottom-0 w-[70%] h-[7%] bg-white' id="thirdBar"
+                            variants={thirdBar}
+                ></motion.div>
             </motion.div>
 
             <motion.div
                 className='opacity-0 flex flex-col justify-center self-center bg-[#353935] w-[100%] h-[100%] '
-                variants={mobileMenuVariants}
-                animate={animate}
-                intial="close"  
+                variants={mobileMenuVariants} 
                 >
 
                 <motion.div 
@@ -168,7 +222,7 @@ export default function Header(props) {
 
               
 
-        </div>
+        </motion.div>
 
     )
 }
