@@ -99,7 +99,7 @@ export default function Header(props) {
         open:{
             rotate:45,
             translateY:15,
-            translateX:10,
+            translateX:2,
             transition:{
                 type:"ease",
                 duration:0.5
@@ -129,8 +129,8 @@ export default function Header(props) {
     let thirdBar = {
         open:{
             rotate:-45,
-            translateY:-17,
-            translateX:10,
+            translateY:-14,
+            translateX:2,
             transition:{
                 type:"ease",
                 duration:0.5
@@ -162,6 +162,7 @@ export default function Header(props) {
                 <motion.div className='absolute bottom-0 w-[70%] h-[7%] bg-white' id="thirdBar"
                             variants={thirdBar}
                 ></motion.div>
+
             </motion.div>
 
             <motion.div
