@@ -98,7 +98,7 @@ export default function Header(props) {
     let firstBar = {
         open:{
             rotate:45,
-            translateY:15,
+            translateY:14,
             translateX:2,
             transition:{
                 type:"ease",
@@ -151,7 +151,7 @@ export default function Header(props) {
             <motion.div onClick={toggleAnimation} className='absolute z-20 right-[10vw] top-[4vh] w-[10%] h-[4vh] md:hidden cursor-pointer'
                 variants={hamMenuVariants}
                 animate={animate}
-                // intial="close"
+                intial="close"
             >
                 <motion.div className='absolute top-0 w-[70%] h-[7%] bg-white' id="firstBar"
                             variants={firstBar}
@@ -168,6 +168,8 @@ export default function Header(props) {
             <motion.div
                 className='opacity-0 flex flex-col justify-center self-center bg-[#353935] w-[100%] h-[100%] '
                 variants={mobileMenuVariants} 
+                animate={animate}
+                intial="close"
                 >
 
                 <motion.div 
