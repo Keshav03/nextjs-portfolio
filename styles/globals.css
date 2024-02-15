@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Montserrat:wght@100;200;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Seaweed+Script&display=swap');
 html {
     scroll-behavior: smooth;
   }
@@ -39,4 +40,8 @@ html {
     margin:20px;
     color:orange;
     font-weight: bold;
+}
+
+*{
+  @apply transition-colors duration-[1s]
 }

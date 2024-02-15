@@ -14,39 +14,56 @@ import About from '../components/AboutUs'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 import Loading from '../components/Loading'
-import { Suspense, useState, useEffect } from 'react'
+import { Suspense, useState, useEffect, useRef, use } from 'react'
+import { motion, useScroll,useMotionValueEvent } from 'framer-motion'
+import { async } from '@firebase/util'
 
 export default function Home() {
 
-  let [loading,setLoading] = useState(true)
+  let [loading,setLoading] = useState(false)
+  let [headerVisible,setHeaderVisible] = useState(true)
 
-  useEffect(() => {
-    const onPageLoad = () => {
-      setLoading(false);
-      console.log("Loaded!")
-    };
+  const ref = useRef(null)
+  let {scrollY} = useScroll({container:ref})
 
-    if (document.readyState === 'complete') {
-      setTimeout(onPageLoad,3500)
-    } else {
-      window.addEventListener('load', onPageLoad);
-      // Remove the event listener when component unmounts
-      return () => window.removeEventListener('load', onPageLoad);
+    
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if(latest > scrollY.getPrevious()){
+      setHeaderVisible(false)
+    }else{
+      setHeaderVisible(true)
     }
-  })
+  })   
+    
+  // useEffect(() => {
+  //   const onPageLoad = () => {
+  //     setLoading(false);
+  //     console.log("Loaded!")
+  //   };
+  //   setTimeout(onPageLoad,3500)
+  //   // if (document.readyState === 'complete') {
+  //   //   setTimeout(onPageLoad,3500)
+  //   // } 
+  //   // else {
+  //   //   window.addEventListener('load', onPageLoad);
+  //   //   return () => window.removeEventListener('load', onPageLoad);
+  //   // }
+  // })
 
     return (
-      <div>
+      <div >
     {!loading ?  
-      <div className="relative h-screen scroll-smooth bg-[#242526]  scrollbar scrollbar-track-gray-600 scrollbar-thumb-[#36bbc4]/60">
+      <div className="relative h-screen scroll-smooth bg-[#242526]  scrollbar scrollbar-track-gray-600 scrollbar-thumb-[#36bbc4]/60 overflow-x-hidden"
+        ref={ref}
+      >
       <Head>
         <title>Keshav Bokhoree - Junior Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Suspense fallback={<Header></Header>}>
-        <main>
-          <Header></Header>
+        <main >
+          <Header headerVisible={headerVisible}></Header>
           <Hero></Hero>
           <About></About>
           <Skills></Skills>
